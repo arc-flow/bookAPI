@@ -1,0 +1,12 @@
+{
+  "port": 80,
+  "platform": "django",
+  "app": "bookApi",
+  "build": {
+    "location": "iran"
+  },
+  "django": {
+    "pythonVersion": "3.12"
+  },
+  "disks": []
+}

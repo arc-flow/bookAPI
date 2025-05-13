@@ -18,9 +18,10 @@ from django.contrib import admin
 from django.urls import path, include
 from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView, SpectacularRedocView
 from django.urls import path
-
+from django.views.generic import RedirectView
 
 urlpatterns = [
+    path('', RedirectView.as_view(url='/api/schema/swagger/', permanent=True), name='home'),
     path("books/", include("books.urls")),
     path("accounts/", include("user.urls")),
     path('api/schema/', SpectacularAPIView.as_view(), name='schema'),
