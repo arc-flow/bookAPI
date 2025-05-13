@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     "books",
-    "user"
+    "user",
+    "drf_spectacular",
 ]
 
 MIDDLEWARE = [
@@ -134,9 +135,16 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.TokenAuthentication',
     ],
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+
 }
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "https://localhost:3000"
 ]
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'BookAPI',
+    'DESCRIPTION': 'Awesome API for books',
+    'VERSION': '1.0.0',
+}
